@@ -9,14 +9,14 @@ namespace Core.Base
 {
     public class BaseEntity<T> : IBaseEntity<T>
     {
-        public T? Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public T? Id { get; set; }
         public string? CreatorUserName {get; set; }
-        public DateTime? CreationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string? LastModifierUserName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? ModificationTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string? DeletedUserName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? DeleteTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool? IsDeleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime? CreationTime { get; set; }
+        public string? LastModifierUserName { get; set; }
+        public DateTime? ModificationTime { get; set; }
+        public string? DeletedUserName { get; set; }
+        public DateTime? DeleteTime { get; set; }
+        public bool? IsDeleted { get; set; }
     }
     public class BaseEntity : BaseEntity<string>
     {

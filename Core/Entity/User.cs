@@ -11,7 +11,9 @@ namespace Core.Entity
     public class User 
     {
         [Key]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
-        public string DisplayUserName { get; set; }
+        public string? Id { get; set; } = Guid.NewGuid().ToString();
+        public string? UserName { get; set; }
+        public string? DisplayUserName { get; set; }
+        public string? Password { get; set; }
     }
 }
