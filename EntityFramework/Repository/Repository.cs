@@ -40,7 +40,7 @@ namespace EntityFramework.Repository
         }
         public void Save(T Entity)
         {
-            _dbSet.SaveChange()
+            _dbContext.SaveChanges();
         }
     }
 }

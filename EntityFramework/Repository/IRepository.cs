@@ -9,7 +9,7 @@ namespace EntityFramework.Repository
     public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
-        void Insert();
+        void Insert(T Entity);
         void Update(T Entity);
         void Delete(T Entity);
         T FindById(string id);

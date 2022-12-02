@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7938DDA3-E622-4D59-8828-C2EC8AE00123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{7938DDA3-E622-4D59-8828-C2EC8AE00123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{47D8CB43-A052-43CD-B625-197F7BCCBC74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{47D8CB43-A052-43CD-B625-197F7BCCBC74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{D17089E8-D29F-478E-BBBB-ED3DBD06D5F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{47D8CB43-A052-43CD-B625-197F7BCCBC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D8CB43-A052-43CD-B625-197F7BCCBC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D8CB43-A052-43CD-B625-197F7BCCBC74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17089E8-D29F-478E-BBBB-ED3DBD06D5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17089E8-D29F-478E-BBBB-ED3DBD06D5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17089E8-D29F-478E-BBBB-ED3DBD06D5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17089E8-D29F-478E-BBBB-ED3DBD06D5F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
