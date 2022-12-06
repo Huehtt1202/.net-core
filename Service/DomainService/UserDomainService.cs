@@ -14,10 +14,33 @@ namespace Service.DomainService
     public class UserDomainService : Repository<User>, IUserDomainService
     {
         private readonly crmDbContext _dbContext;
-        private readonly User _user;
-        public UserDomainService(crmDbContext _dbContext, User _user)
+        private readonly DbSet<User> _user;
+        private readonly Repository<User> _repository;
+        public UserDomainService(crmDbContext dbContext, User user, Repository<User> repository)
         {
-            _dbContext = _user;
+            _dbContext = dbContext;
+            _user = user;
+            _repository = repository;
+        }
+
+        public void Login(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Logout()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string MD5(string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ResetPassword(string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }
