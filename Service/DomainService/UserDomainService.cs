@@ -27,29 +27,26 @@ namespace Service.DomainService
             _user = user;
         }
 
-        public void Login(string username, string password)
+        public object GetSession()
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                throw new EmptyException();
-            }
-            else
-            {
-                var conPassword = MD5(password);
-                List<User> user = new List<User>();
-                foreach (var u in user)
-                {
-                    if (u.Equals(username) && u.Equals(conPassword))
-                    {
-                       
-                    }
+            return GetSession;
+        }
 
-                }
+        public void Login(string username, string conpPassword)
+        {
+            var conPassword = MD5(conpPassword);
+            var dataUser = _dbContext.User.Where(s => s.UserName.Equals(username) && s.Password.Equals(conpPassword));
+            if (dataUser.Count() > 0)
+            {
+                GetSession["DisplayUseraName"] = dataUser.FirstOrDefault().DisplayUserName;
+                GetSession["idUser"] = dataUser.FirstOrDefault().Id;
+                session["UserName"] = dataUser.FirstOrDefault().UserName;
             }
         }
 
         public void Logout()
         {
+            Login.Clear();
         }
         public string MD5(string password)
         {
