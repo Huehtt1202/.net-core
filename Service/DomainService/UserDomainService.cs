@@ -26,27 +26,26 @@ namespace Service.DomainService
             _dbContext = dbContext;
             _user = user;
         }
-
-        public object GetSession()
+        public void Login(string username, string password)
         {
-            return GetSession;
-        }
-
-        public void Login(string username, string conpPassword)
-        {
-            var conPassword = MD5(conpPassword);
-            var dataUser = _dbContext.User.Where(s => s.UserName.Equals(username) && s.Password.Equals(conpPassword));
-            if (dataUser.Count() > 0)
+            if (string.IsNullOrEmpty(username) && string.IsNullOrEmpty(password))
             {
-                GetSession["DisplayUseraName"] = dataUser.FirstOrDefault().DisplayUserName;
-                GetSession["idUser"] = dataUser.FirstOrDefault().Id;
-                session["UserName"] = dataUser.FirstOrDefault().UserName;
+                var conPassword = MD5(password);
+                List<User> user = new List<User>();
+                foreach (var u in user)
+                {
+                    if(u.Password.Equals(password)&& u.UserName.Equals(user))
+                    {
+                        //login successfully
+                    }
+                    //login unsuccessfully
+                }
             }
+            throw new EmptyException();
         }
 
         public void Logout()
         {
-            Login.Clear();
         }
         public string MD5(string password)
         {
@@ -70,9 +69,10 @@ namespace Service.DomainService
             }
         }
 
-        public string ResetPassword(string password)
+        public string ResetPassword()
         {
-            throw new NotImplementedException();
+            //var user = User.FindById();
+            return user.Password = "123123";
         }
     }
 }
