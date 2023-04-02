@@ -6,7 +6,7 @@ using EntityFramework.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyExceptions;
-using Service.IDomainService;
+using Service.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,24 +14,36 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.DomainService
+namespace Service.user
 {
-    public class UserDomainService : Repository<User>, IUserDomainService
+    public class UserDomainService : Repository<crmDbContext>, IUserDomainService
     {
         private readonly crmDbContext _dbContext;
-        private readonly DbSet<User> _user;
+        private readonly DbSet<Core.Entity.User> _user;
 
-        public UserDomainService(crmDbContext dbContext, DbSet<User> user) : base(dbContext, user)
+        public UserDomainService(crmDbContext dbContext, DbSet<Core.Entity.User> user) : base(dbContext, user)
         {
             _dbContext = dbContext;
             _user = user;
         }
+
+        public string AddNewAdmin(string username, string password)
+        {
+            public static List<User> users = new List<Core.Entity.User>();
+
+        }
+
+        public void DeleteAdmin(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Login(string username, string password)
         {
             if (string.IsNullOrEmpty(username) && string.IsNullOrEmpty(password))
             {
                 var conPassword = MD5(password);
-                List<User> user = new List<User>();
+                List<Core.Entity.User> user = new List<Core.Entity.User>();
                 foreach (var u in user)
                 {
                     if(u.Password.Equals(password)&& u.UserName.Equals(user))
@@ -69,10 +81,5 @@ namespace Service.DomainService
             }
         }
 
-        public string ResetPassword()
-        {
-            //var user = User.FindById();
-            return user.Password = "123123";
-        }
     }
 }

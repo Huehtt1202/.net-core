@@ -10,22 +10,22 @@ namespace EntityFramework
     {
         static void Main(string[] agrs)
         {
-            List<User> users = new List<User>()
-            {
-                new User() {UserName="Admin", DisplayUserName="ADMIN", Password = "123123"}
-            };
-            var user = from us in users
-                       select new
-                       {
-                           UserName = us.UserName,
-                           Display = us.DisplayUserName
-                       };
+            //List<User> users = new List<User>()
+            //{
+            //    new User() {UserName="Admin", DisplayUserName="ADMIN", Password = "123123"}
+            //};
+            //var user = from us in users
+            //           select new
+            //           {
+            //               UserName = us.UserName,
+            //               Display = us.DisplayUserName
+            //           };
 
-            foreach (var item in user)
-            {
-                Console.Write(item.UserName + item.Display);
+            //foreach (var item in user)
+            //{
+            //    Console.Write(item.UserName + item.Display);
 
-            }
+            //}
         }
     }
 }
